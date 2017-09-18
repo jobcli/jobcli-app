@@ -37,10 +37,10 @@ def download_jobs(jobtitle, country, location, output, firm, skills):
     headers = {'Accept': output}
     payload = {
                "country"  : country
-              ,"jobtitle" : jobtitle
               ,"location" : location
-              ,"skills"   : skills
               ,"company"  : firm
+              ,"jobtitle" : jobtitle
+              ,"skills"   : skills
     }
 
     r = requests.post(url, headers=headers, data=payload)
