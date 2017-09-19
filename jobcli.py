@@ -32,8 +32,8 @@ def validate_country(ctx, param, value):
 
 
 def download_jobs(jobtitle, country, location, output, firm, skills):
-    """Commandline job board"""
-    url     = 'http://api.jobcli.com:3000/rpc/ads'
+    """Command Line Job Board"""
+    url     = 'http://api.jobcli.com/rpc/ads'
     headers = {'Accept': output}
     payload = {
                "country"  : country
@@ -42,11 +42,11 @@ def download_jobs(jobtitle, country, location, output, firm, skills):
               ,"jobtitle" : jobtitle
               ,"skills"   : skills
     }
-
-    r = requests.post(url, headers=headers, data=payload)
-   #sys.stdout.write(r.url)
-   #sys.stdout.write('\n\n')
-    sys.stdout.write(r.text)
+    try:
+        r = requests.post(url, headers=headers, data=payload)
+        sys.stdout.write(r.text)
+    except:
+        raise click.ClickException('The JobCLI server could not be reached at this moment.')
 
 
 if __name__ == '__main__':
