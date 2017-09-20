@@ -1,5 +1,10 @@
 from distutils.core import setup
 
+def readme():
+    with open('README.rst') as f:
+        return f.read()
+
+
 setup(
     name='jobCLI',
     version='1.a3',
@@ -10,10 +15,12 @@ setup(
     url='https://www.jobcli.com',
     license='MIT',
     description='Job Search Command Line Tool',
+    long_description=readme(),
     keywords='jobs careers jobsearch developers commandline',
 
     classifiers=[
-        'Development Status :: 3 - Alpha', # 3 - Alpha | 4 - Beta | 5 - Prod
+        'Development Status :: 3 - Alpha',
+        'License :: OSI Approved :: MIT License',
         'Intended Audience :: Developers',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
