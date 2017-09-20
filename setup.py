@@ -7,7 +7,7 @@ def readme():
 
 setup(
     name='jobCLI',
-    version='1.a7',
+    version='1.a8',
     include_package_data=False,
     author='Stephan Goergen',
     author_email='stephan.goergen@gmail.com',
@@ -29,8 +29,8 @@ setup(
         'Programming Language :: Python :: 3.4',
     ],
 
-    install_requires=['click',],
-    python_requires='>=3',
+    install_requires=['click', 'requests'],
+    python_requires='>=2.7',
     zip_safe=False,
     entry_points={
           'console_scripts': [
