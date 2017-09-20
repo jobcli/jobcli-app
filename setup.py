@@ -7,7 +7,7 @@ def readme():
 
 setup(
     name='jobCLI',
-    version='1.a3',
+    version='1.a7',
     include_package_data=False,
     author='Stephan Goergen',
     author_email='stephan.goergen@gmail.com',
@@ -31,6 +31,10 @@ setup(
 
     install_requires=['click',],
     python_requires='>=3',
-    scripts=['jobcli.py'],
     zip_safe=False,
+    entry_points={
+          'console_scripts': [
+              'jobcli = jobCLI.__main__:download_jobs'
+          ]
+      },
 )
