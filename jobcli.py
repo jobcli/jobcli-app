@@ -1,7 +1,6 @@
 import click
 import requests
 import sys
-import urllib.parse
 
 
 def validate_output(ctx, param, value):
