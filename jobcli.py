@@ -1,4 +1,3 @@
-#!/usr/local/bin/python3
 import click
 import requests
 import sys
@@ -12,26 +11,27 @@ def validate_output(ctx, param, value):
     if o == 'json':
         return 'application/json; charset=utf8'
     else:
-        raise click.BadParameter('Output needs to be csv or json.')
+        raise click.BadParameter('Output type must be CSV or JSON.')
 
 
 def validate_country(ctx, param, value):
     if len(value) == 2:
         return value.lower()
     else:
-        raise click.BadParameter('Country needs to be valid ISO-alpha2 code.')
+        raise click.BadParameter('Country must be ISO-alpha2 code.')
 
 
 @click.command()
-@click.option('--country' , '-c', default ='US' , help='iso-alpha2'  , callback=validate_country )
-@click.option('--location', '-l', default =''   , help='city'                                    )
-@click.option('--jobtitle', '-j', default =''   , help='job title'                               )
-@click.option('--skills'  , '-s', default =''   , help='search terms (comma-separated)'          )
-@click.option('--firm'    , '-f', default =''   , help='company name'                            )
-@click.option('--output'  , '-o', default ='csv', help='csv | json'  , callback=validate_output  )
+@click.option('--country', '-c', default ='US', help='iso-alpha2'
+              , callback=validate_country )
+@click.option('--location', '-l', default ='', help='city' )
+@click.option('--jobtitle', '-j', default ='', help='job title' )
+@click.option('--skills', '-s', default ='', help='search terms' )
+@click.option('--firm', '-f', default ='', help='company name' )
+@click.option('--output', '-o', default ='csv', help='csv | json'
+              , callback=validate_output )
 
-
-def download_jobs(jobtitle, country, location, output, firm, skills):
+def cli(jobtitle, country, location, output, firm, skills):
     """Command Line Job Board"""
     url     = 'http://api.jobcli.com/rpc/ads'
     headers = {'Accept': output}
@@ -50,5 +50,5 @@ def download_jobs(jobtitle, country, location, output, firm, skills):
 
 
 if __name__ == '__main__':
-    download_jobs()
+    cli()
 

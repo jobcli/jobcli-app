@@ -1,40 +1,36 @@
-from distutils.core import setup
-
-def readme():
-    with open('README.rst') as f:
-        return f.read()
-
+from setuptools import setup
 
 setup(
-    name='jobCLI',
-    version='1.a8',
-    include_package_data=False,
+    name='jobcli',
+    version='0.1.a1',
+    py_modules=['jobcli'],
+    install_requires=['click', 'requests',],
+    entry_points={'console_scripts':['jobcli=jobcli:cli',]},
+    url='https://www.jobcli.com',
     author='Stephan Goergen',
     author_email='stephan.goergen@gmail.com',
-
-    url='https://www.jobcli.com',
+    description='Job Search from the Command Line',
     license='MIT',
-    description='Job Search Command Line Tool',
-    long_description=readme(),
-    keywords='jobs careers jobsearch developers commandline',
-
+    zip_safe=False,
+    include_package_data=False,
+    keywords='board job search command line career developer engineer',
     classifiers=[
-        'Development Status :: 3 - Alpha',
         'License :: OSI Approved :: MIT License',
+        'Development Status :: 3 - Alpha',
+        'Environment :: Console',
+        'Operating System :: OS Independent'
+        'Natural Language :: English',
         'Intended Audience :: Developers',
+        'Intended Audience :: Information Technology',
+        'Intended Audience :: System Administrators',
+        'Intended Audience :: Science/Research',
+        'Topic :: Office/Business',
+        'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
     ],
-
-    install_requires=['click', 'requests'],
-    python_requires='>=2.7',
-    zip_safe=False,
-    entry_points={
-          'console_scripts': [
-              'jobcli = jobCLI.__main__:download_jobs'
-          ]
-      },
 )
+
