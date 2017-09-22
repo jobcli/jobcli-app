@@ -1,6 +1,6 @@
 # JobCLI
 
-![Screencast](https://s3.amazonaws.com/aws-website-jobclicom-iq2rf/img/jobcli_screencast_20170921.gif)
+![Screencast](https://s3.amazonaws.com/aws-website-jobclicom-iq2rf/img/jobcli_screencast_20170921a.gif)
 
 ## Features
 - More than 10k active jobads from companies in the US and Germany (for now)
