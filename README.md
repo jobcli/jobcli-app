@@ -1,7 +1,7 @@
 # JobCLI
 ### Job Search from the Command Line
 
-![Screencast](https://s3.amazonaws.com/aws-website-jobclicom-iq2rf/img/jobcli_screencast_20170921a.gif)
+![Screencast](https://s3.amazonaws.com/aws-website-jobclicom-iq2rf/assets/img/screencast.gif)
 
 ## Features
 - More than 10k active jobads from companies in the US and Germany (for now)
