@@ -37,7 +37,7 @@ def cli(jobtitle, country, location, output, firm, skills, page):
               ,"company"  : firm
               ,"jobtitle" : jobtitle
               ,"skills"   : skills
-              # ,"page"     : page
+              ,"page"     : page
     }
     try:
         r = requests.post(url, headers=headers, data=payload)
