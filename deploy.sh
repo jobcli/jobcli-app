@@ -25,10 +25,10 @@ else
         python3 setup.py bdist_wheel --universal &&
 
         #2 Upload to PyPI
-        twine upload dist/jobcli-0.1a2* &&
+        twine upload "dist/jobcli-"$SCRIPTVERSION* &&
 
         #3 pip update
-        pip3 install jobcli --upgrade
+        # pip3 install jobcli --upgrade
     fi
 fi
 
