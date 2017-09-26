@@ -20,7 +20,6 @@ else
     then
         echo 'This version has already been deployed to PyPI'
     else
-        echo 'Will deploy to pip' ; exit;
         #1 Generate distribution and wheel
         python3 setup.py sdist &&
         python3 setup.py bdist_wheel --universal &&
