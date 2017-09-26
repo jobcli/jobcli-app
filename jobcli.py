@@ -12,26 +12,23 @@ def validate_output(ctx, param, value):
     else:
         raise click.BadParameter('Output type must be CSV or JSON.')
 
+CONTEXT_SETTINGS = dict(token_normalize_func=lambda x: x.lower())
 
-def validate_country(ctx, param, value):
-    if len(value) == 2:
-        return value.lower()
-    else:
-        raise click.BadParameter('Country must be ISO-alpha2 code.')
+@click.command(context_settings=CONTEXT_SETTINGS)
+@click.option('--country', '-c', default ='US', help='iso-alpha2 country code'
+              , type=click.Choice(['US', 'DE']))
+@click.option('--location', '-l', default ='', help='city')
+@click.option('--jobtitle', '-j', default ='', help='job title')
+@click.option('--skills', '-s', default ='', help='search terms')
+@click.option('--firm', '-f', default ='', help='company name')
+@click.option('--page', '-p', default = 1, help='search result page')
+@click.option('--output', '-o', default ='csv', help='output format'
+              , type=click.Choice(['CSV', 'JSON'])
+              , callback=validate_output)
+@click.version_option('0.1b1', '--version', '-v')
 
-
-@click.command()
-@click.option('--country', '-c', default ='US', help='iso-alpha2'
-              , callback=validate_country )
-@click.option('--location', '-l', default ='', help='city' )
-@click.option('--jobtitle', '-j', default ='', help='job title' )
-@click.option('--skills', '-s', default ='', help='search terms' )
-@click.option('--firm', '-f', default ='', help='company name' )
-@click.option('--output', '-o', default ='csv', help='csv | json'
-              , callback=validate_output )
-
-def cli(jobtitle, country, location, output, firm, skills):
-    """Command Line Job Board"""
+def cli(jobtitle, country, location, output, firm, skills, page):
+    """JobCLI: Your Command Line Job Board"""
     url     = 'http://api.jobcli.com/rpc/ads'
     headers = {'Accept': output}
     payload = {
@@ -40,6 +37,7 @@ def cli(jobtitle, country, location, output, firm, skills):
               ,"company"  : firm
               ,"jobtitle" : jobtitle
               ,"skills"   : skills
+              # ,"page"     : page
     }
     try:
         r = requests.post(url, headers=headers, data=payload)
