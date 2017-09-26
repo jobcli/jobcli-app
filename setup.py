@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='jobcli',
-    version='0.1.a2',
+    version='0.1b1',
     py_modules=['jobcli'],
     install_requires=['click', 'requests',],
     entry_points={'console_scripts':['jobcli=jobcli:cli',]},
@@ -16,7 +16,7 @@ setup(
     keywords='board job search command line career developer engineer',
     classifiers=[
         'License :: OSI Approved :: MIT License'
-       ,'Development Status :: 3 - Alpha'
+       ,'Development Status :: 4 - Beta'
        ,'Environment :: Console'
        ,'Operating System :: OS Independent'
        ,'Natural Language :: English'
