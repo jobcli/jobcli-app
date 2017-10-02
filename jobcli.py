@@ -25,7 +25,7 @@ CONTEXT_SETTINGS = dict(token_normalize_func=lambda x: x.lower())
 @click.option('--output', '-o', default ='csv', help='output format'
               , type=click.Choice(['CSV', 'JSON'])
               , callback=validate_output)
-@click.version_option('0.1b1', '--version', '-v')
+@click.version_option('0.1b2', '--version', '-v')
 
 def cli(jobtitle, country, location, output, firm, skills, page):
     """JobCLI: Your Command Line Job Board"""

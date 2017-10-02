@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='jobcli',
-    version='0.1b1',
+    version='0.1b2',
     py_modules=['jobcli'],
     install_requires=['click', 'requests',],
     entry_points={'console_scripts':['jobcli=jobcli:cli',]},

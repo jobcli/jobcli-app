@@ -1,5 +1,5 @@
 #!/bin/env/bash
-cd /Users/stephan/Projects/jobcli-app/
+cd $HOME/Projects/jobcli-app/
 
 SCRIPTVERSION=$(gsed -ne 's/.*version_option(\x27\([^ ]*\)\x27.*/\1/p' jobcli.py)
 SETUPVERSION=$(gsed -ne 's/.*version=\x27\([^ ]*\)\x27.*/\1/p' setup.py)
@@ -25,13 +25,10 @@ else
         python3 setup.py bdist_wheel --universal &&
 
         #2 Upload to PyPI
-        twine upload "dist/jobcli-"$SCRIPTVERSION* &&
+        twine upload "dist/jobcli-"$SCRIPTVERSION*
 
         #3 pip update
         # pip3 install jobcli --upgrade
     fi
 fi
-
-
-
 
