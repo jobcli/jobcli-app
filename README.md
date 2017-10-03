@@ -6,7 +6,7 @@
 - Simple command line interface
 - CSV or JSON output
 
-![Screencast]()
+<!--- ![Screencast](https://s3.amazonaws.com/aws-website-jobclicom-iq2rf/assets/img/screencast.gif) --->
 
 ## :electric_plug: Installation
 ```bash
