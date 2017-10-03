@@ -7,11 +7,17 @@
 - Simple command line interface
 - CSV or JSON output
 
-Table of Contents
 
-
-
-
+## Table of Contents
+  * [Installation](#electric_plug-installation)
+  * [Usage](#computer-usage)
+    + [Example 1: simple search](#example-1-simple-search)
+    + [Example 2: multiple criteria](#example-2-multiple-criteria)
+    + [Example 3: pagination](#example-3-pagination)
+  * [Pretty-printing](#pretty-printing)
+    + [CSV](#csv)
+    + [JSON](#json)
+  * [Local database](#local-database)
 
 
 ## :electric_plug: Installation
