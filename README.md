@@ -7,6 +7,18 @@
 - Simple command line interface
 - CSV or JSON output
 
+
+## [Table of Contents](#jobcli)
+  * [Installation](#electric_plug-installation)
+  * [Usage](#computer-usage)
+    + [Example 1](#example-1)
+    + [Example 2](#example-2)
+    + [Pretty-printing](#pretty-printing)
+      - [CSV](#csv)
+      - [JSON](#json)
+    + [Local database](#local-database)
+
+
 ## :electric_plug: Installation
 ```
 $ pip install jobcli
