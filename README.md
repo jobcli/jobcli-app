@@ -6,8 +6,6 @@
 - Simple command line interface
 - CSV or JSON output
 
-<!--- ![Screencast](https://s3.amazonaws.com/aws-website-jobclicom-iq2rf/assets/img/screencast.gif) --->
-
 ## :electric_plug: Installation
 ```bash
 $ pip install jobcli
@@ -48,6 +46,7 @@ $ jobcli -j frontend -c DE -s react
 ```
 
 ### Pretty-printing
+#### CSV
 For csv output, [csvkit](https://csvkit.readthedocs.io/en/1.0.2/) comes with `csvlook`:
 ```bash
 $ jobcli | csvlook | head
@@ -69,6 +68,10 @@ You can install csvkit with pip:
 pip install csvkit
 ```
 
+![Screencast](https://s3.amazonaws.com/aws-website-jobclicom-iq2rf/assets/img/screencast.gif)
+
+
+#### JSON
 For json output, there's a handy tool in the python standard library:
 ```bash
 jobcli -o json | python -m json.tool | less
