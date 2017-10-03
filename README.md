@@ -7,16 +7,11 @@
 - Simple command line interface
 - CSV or JSON output
 
+Table of Contents
 
-## [Table of Contents](#jobcli)
-  * [Installation](#electric_plug-installation)
-  * [Usage](#computer-usage)
-    + [Example 1](#example-1)
-    + [Example 2](#example-2)
-    + [Pretty-printing](#pretty-printing)
-      - [CSV](#csv)
-      - [JSON](#json)
-    + [Local database](#local-database)
+
+
+
 
 
 ## :electric_plug: Installation
@@ -46,20 +41,27 @@ Options:
   --help                   Show this message and exit.
 ```
 
-### Example 1
-To list all engineering jobs in the US, do:
+### Example 1: simple search
+To list engineering jobs, do:
 ```
-$ jobcli -j engineer -c US
+$ jobcli -j engineer
 ```
 
-### Example 2
+### Example 2: multiple criteria 
 To list front-end jobs in Germany that mention 'react' in their description, do:
 ```
 $ jobcli -j frontend -c DE -s react
 ```
 
-### Pretty-printing
-#### CSV
+### Example 3: pagination
+You only receive 100 records at a time. To paginate through the entire result set, use the `--page` or `-p` option:
+```
+$ jobcli -j developer -c US -p 2
+```
+
+
+## Pretty-printing
+### CSV
 For csv output, [csvkit](https://csvkit.readthedocs.io/en/1.0.2/) comes with `csvlook`:
 ```
 $ jobcli | csvlook | head
@@ -83,7 +85,7 @@ $ pip install csvkit
 ![Screencast](https://s3.amazonaws.com/aws-website-jobclicom-iq2rf/assets/img/screencast.gif)
 
 
-#### JSON
+### JSON
 For json output, there's a handy tool in the python standard library:
 ```
 $ jobcli -o json | python -m json.tool | less
@@ -108,7 +110,7 @@ $ jobcli -o json | python -m json.tool | less
     [...]
 ```
 
-### Local database
+## Local database
 If you prefer to load the data into your own database and query from there, this schema might come in handy:
 ```sql
 CREATE TABLE jobs(
