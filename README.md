@@ -1,15 +1,12 @@
 # JobCLI
-### Job Search from the Command Line
-
-![Screencast](https://s3.amazonaws.com/aws-website-jobclicom-iq2rf/assets/img/screencast.gif)
+## Job Search from the Command Line
 
 ## Features
-- :earth_americas: More than 10k active jobads from companies in :us: and :de: (for now)
-- :cool: Simple command line interface
-- :open_file_folder: CSV or JSON output
+- Tech jobs from companies in :us: and :de: (for now)
+- Simple command line interface
+- CSV or JSON output
 
-
-## :books: Documentation
+![Screencast]()
 
 ## :electric_plug: Installation
 ```bash
@@ -17,11 +14,35 @@ $ pip install jobcli
 ```
 
 ## :computer: Usage
+
+To list all available options in your command line, do:
+```bash
+$ jobcli --help
+
+Usage: jobcli [OPTIONS]
+
+  JobCLI: Your Command Line Job Board
+
+Options:
+  -c, --country [US|DE]    iso-alpha2 country code
+  -l, --location TEXT      city
+  -j, --jobtitle TEXT      job title
+  -s, --skills TEXT        search terms
+  -f, --firm TEXT          company name
+  -p, --page INTEGER       search result page
+  -o, --output [CSV|JSON]  output format
+  -v, --version            Show the version and exit.
+  --help                   Show this message and exit.
+```
+
+### Example 1
 To list all engineering jobs in the US, do:
 ```bash
 $ jobcli -j engineer -c US
 ```
-To list frontend jobads in Germany that mention 'react', do:
+
+### Example 2
+To list front-end jobs in Germany that mention 'react' in their description, do:
 ```bash
 $ jobcli -j frontend -c DE -s react
 ```
