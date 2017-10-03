@@ -1,5 +1,5 @@
 # JobCLI
-### Job search from the command-line
+### Job search from the command line
 
 ## Features
 - More than 15K jobs in software development, engineering and data science 
@@ -8,14 +8,14 @@
 - CSV or JSON output
 
 ## :electric_plug: Installation
-```bash
+```
 $ pip install jobcli
 ```
 
 ## :computer: Usage
 
 To list all available options in your command line, do:
-```bash
+```
 $ jobcli --help
 
 Usage: jobcli [OPTIONS]
@@ -36,20 +36,20 @@ Options:
 
 ### Example 1
 To list all engineering jobs in the US, do:
-```bash
+```
 $ jobcli -j engineer -c US
 ```
 
 ### Example 2
 To list front-end jobs in Germany that mention 'react' in their description, do:
-```bash
+```
 $ jobcli -j frontend -c DE -s react
 ```
 
 ### Pretty-printing
 #### CSV
 For csv output, [csvkit](https://csvkit.readthedocs.io/en/1.0.2/) comes with `csvlook`:
-```bash
+```
 $ jobcli | csvlook | head
 
 | url                        | jobtitle                                              | company              | location             | country | page |
@@ -64,7 +64,7 @@ $ jobcli | csvlook | head
 | http://jobcli.com/GuVB_NUi | Graphic Designer                                      | Jillian's Circus     | Oceanside, NY        | US      | 1    |
 ```
 You can install csvkit with pip:
-```bash
+```
 $ pip install csvkit
 ```
 
@@ -73,7 +73,7 @@ $ pip install csvkit
 
 #### JSON
 For json output, there's a handy tool in the python standard library:
-```bash
+```
 $ jobcli -o json | python -m json.tool | less
 
 [
