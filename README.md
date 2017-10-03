@@ -96,3 +96,16 @@ $ jobcli -o json | python -m json.tool | less
     [...]
 ```
 
+### Local database
+If you prefer to load the data into your own database and query from there, this schema might come in handy:
+```sql
+CREATE TABLE jobs(
+  url varchar(30),
+  jobtitle varchar(50),
+  company varchar(25),
+  location varchar(20),
+  country varchar(2),
+  page int
+);
+```
+
