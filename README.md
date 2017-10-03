@@ -4,17 +4,19 @@
 ![Screencast](https://s3.amazonaws.com/aws-website-jobclicom-iq2rf/assets/img/screencast.gif)
 
 ## Features
-- More than 10k active jobads from companies in the US and Germany (for now)
-- Simple command line interface
-- CSV or JSON output
+- :earth_americas: More than 10k active jobads from companies in :us: and :de: (for now)
+- :cool: Simple command line interface
+- :open_file_folder: CSV or JSON output
 
 
-## Installation
+## :books: Documentation
+
+## :electric_plug: Installation
 ```bash
 $ pip install jobcli
 ```
 
-## Usage
+## :computer: Usage
 To list all engineering jobs in the US, do:
 ```bash
 $ jobcli -j engineer -c US
