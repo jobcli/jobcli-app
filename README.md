@@ -2,7 +2,7 @@
 ### Job search from the command line
 
 ## Features
-- More than 15K jobs in software development, engineering and data science 
+- More than 15K jobs in software development, engineering and data science
 - Companies in :us: and :de: (for now)
 - Simple command line interface
 - CSV or JSON output
@@ -19,6 +19,9 @@
     + [JSON](#json)
   * [Local database](#local-database)
 
+
+## Prerequisites
+* PIP - python package manager ([How to install PIP](https://pip.pypa.io/en/stable/installing/))
 
 ## :electric_plug: Installation
 ```
@@ -53,7 +56,7 @@ To list engineering jobs, do:
 $ jobcli -j engineer
 ```
 
-### Example 2: multiple criteria 
+### Example 2: multiple criteria
 To list front-end jobs in Germany that mention 'react' in their description, do:
 ```
 $ jobcli -j frontend -c DE -s react
@@ -90,6 +93,7 @@ $ pip install csvkit
 
 ![Screencast](https://s3.amazonaws.com/aws-website-jobclicom-iq2rf/assets/img/screencast.gif)
 
+An alternative from the Rust ecosystem is the excellent [xsv](https://github.com/BurntSushi/xsv) and it's `table` command.
 
 ### JSON
 For json output, there's a handy tool in the python standard library:
@@ -116,7 +120,7 @@ $ jobcli -o json | python -m json.tool | less
     [...]
 ```
 
-## Local database
+## Saving to a local database
 If you prefer to load the data into your own database and query from there, this schema might come in handy:
 ```sql
 CREATE TABLE jobs(
@@ -128,4 +132,10 @@ CREATE TABLE jobs(
   page int
 );
 ```
+You can use the `url` as primary key.
 
+## Acknowledgments
+
+* [begriffs/postgrest](https://github.com/begriffs/postgrest)
+* [scrapy/scrapy](https://github.com/scrapy/scrapy)
+* [pallets/click](https://github.com/pallets/click)
